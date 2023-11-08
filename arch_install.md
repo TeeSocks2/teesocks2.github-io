@@ -18,6 +18,15 @@ If you have Windows 11, open up Powershell and type "Get-Filehash" followed by t
 
 ### Part 1.3 (Setting Up Your VM Before Startup)
 
+Select "Create a New Virtual Machine" and then select the option that says "Installer disk image file (iso)." From there, press browse, and find the location of the iso file you just installed on your laptop. From there press next.
+
+Select Linux as your Guest operating system. Select the version as "Other Linux 5.x kernel 64-bit" and then press next. On the next session, just change the name of your Virtual machine to "Arch Linux," and then move on to the next section by clicking the next button.
+
+Change the maximum disk size to be 20GB instead of 8 and make sure that the option to "Split virtual disk into multiple files" 
+has been selected before clicking next to move on to the next section.
+
+Press the button that has "Customize Hardware" and then make sure you are in the "Hardware" section. Edit the memory for the virtual machine so that way it is at 2GB of memory, rather than 768MB. After that, press close and then, once you return back to the regular setup screen, press "Finish."
+
 ### Part 1.4 (Booting the Live Environment)
 
 Find the directory of the Arch Linux VM.
