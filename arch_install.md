@@ -147,7 +147,11 @@ mount /dev/sda2 /mnt
 
 After that has been done type this:
 `
-mount --mkdir /dev/sda1 /mnt/boot
+--mkdir /mnt/boot/efi
+`
+
+`
+mount /dev/sda1 /mnt/boot/efi
 `
 
 And with that we are finally done with the download process. Now we can move onto to installation.
@@ -196,7 +200,7 @@ If you do not already have the `nano` command installed on Arch Linux, type the 
 
 - This step is not required if you already have the nano command installed in your VM.
 
-Type the following command into your VM: `nano /etc/locale.gen` and then edit the file by deleting the line that says "en_US.UTF-8 UTF-8." Then, type `locale-gen` in your VM to generate your locales.
+Type the following command into your VM: `nano /etc/locale.gen` and then edit the file by removing the hash in the line that says "en_US.UTF-8 UTF-8." Then, type `locale-gen` in your VM to generate your locales.
 
 Type the following: `nano /etc/locale.conf` and then in the new file, also type the following: `LANG=en_US.UTF-8`
 
@@ -242,14 +246,6 @@ First, choose which bootloader you want to install
 Type `pacman -Sy grub efibootmgr`
 
 - The first command will download all of the files necessary to install GRUB on your VM. The second command is used to install a program that is necessary for installing UEFI boot entries.
-
-Make a sub-directory inside of the boot directory titled "efi"
-
-- Type: `mkdir -p /boot/efi`
-
-Mount /dev/sda1 to the new directory.
-
-- Type: `mount /dev/sda1 /boot/efi`
 
 Type the following command: `grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB`
 
@@ -307,7 +303,7 @@ Install Xorg on your Unix VM.
 
 Find a compatable Desktop Environment that you want to install on your Arch Linux VM.
 
-- The rest of this part will follow the process of how I installed LXDE as my desktop environment.
+- The rest of this part will follow the process of how I installed GNOME as my desktop environment.
 
 - If you wish to install a different DE for your Arch Linux machine, follow this link and click one of the other links that lead to different installation processes for each of the different desktop environments you can install on your VM: <https://wiki.archlinux.org/title/desktop_environment>
 
